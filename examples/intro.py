@@ -4,15 +4,14 @@
 from ShareImage import ShareImage, clean_tags
 
 tags = [
-    'React',
-    'JSX',
-    'Markdown'
+    'Python',
+    'Cloudinary'
 ]
 
 image = ShareImage(
     title="ShareImage - A Python Library to Create Dynamic Share Images powered by Cloudinary",
     cloudName="zype",
-    imagePublicId="CodeWithR/TEMPLATE",
+    imagePublicId="blog/Post-Image",
     tagline=clean_tags(tags),
     taglineFont="futura"
 )

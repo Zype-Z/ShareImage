@@ -1,4 +1,4 @@
-def clean_tags(tags: list) -> str:
+def join_tags(tags: list) -> str:
     """Generate String Tag with Array of Tags
 
     Args:
