@@ -1,6 +1,6 @@
-    """ShareImage
-    A Python Library to Generate Dynamic Share Images.
-    """
+"""
+    ShareImage - A Python Library to Generate Dynamic Share Images.
+"""
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:

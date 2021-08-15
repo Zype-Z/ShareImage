@@ -1,5 +1,6 @@
-    """A Introduction to ShareImage and a working Example
-    """
+"""
+    A Introduction to ShareImage and a working Example
+"""
 from ShareImage import ShareImage, clean_tags
 
 tags = [
