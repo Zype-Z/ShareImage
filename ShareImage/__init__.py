@@ -43,6 +43,8 @@ def ShareImage(
     titleBottomOffset: int = 254,
     taglineTopOffset: int = 445,
     textColor: str = '000000',
+    titleColor: str = None,
+    taglineColor: str = None,
     titleFontSize: int = 64,
     taglineFontSize: int = 48,
 ) -> str:
@@ -69,6 +71,8 @@ def ShareImage(
         titleBottomOffset (int, optional): Bottom Offset of Tagline. Defaults to 254.
         taglineTopOffset (int, optional): Top Offset of Tagline. Defaults to 445.
         textColor (str, optional): Color of Text. Defaults to '000000'.
+        titleColor (str, optional): Color of Text. Defaults to None.
+        taglineColor (str, optional): Color of Text. Defaults to None.
         titleFontSize (int, optional): Font Size of Title. Defaults to 64.
         taglineFontSize (int, optional): Font Size of Tagline. Defaults to 48.
 
@@ -91,7 +95,7 @@ def ShareImage(
     titleConfig = [
         f'w_{textAreaWidth}',
         'c_fit',
-        f'co_rgb:{textColor}',
+        f'co_rgb:{titleColor or textColor}',
         f'g_{titleGravity}',
         f'x_{titleLeftOffset or textLeftOffset}',
         f'y_{titleBottomOffset}',
@@ -105,7 +109,7 @@ def ShareImage(
         taglineConfig = [
             f'w_{textAreaWidth}',
             'c_fit',
-            f'co_rgb:{textColor}',
+            f'co_rgb:{taglineColor or textColor}',
             f'g_{taglineGravity}',
             f'x_{taglineLeftOffset or textLeftOffset}',
             f'y_{taglineTopOffset}',

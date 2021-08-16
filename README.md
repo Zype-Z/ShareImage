@@ -65,19 +65,54 @@ print(clean_text(title)) # Will return A%2520Test%2520String
 ### Join Tags (`join_tags`)
 It Joins a Array of Tags to with `#` to use it as the tagline of ShareImage.  
 Example:
+
 ```py
 from ShareImage import ShareImage, join_tags
 
 tags = [
-	'Python',
-	'Cloudinary'
+    'Python',
+    'Cloudinary'
 ]
 
 image = ShareImage(
-	cloudName = "zype",
-	imagePublicId = "blog/Post-Image"
-	title = "A Python Library to Generate Dynamic Share Images",
-	tagline = join_tags(tags),
-	taglineFont = "futura"
+    cloudName="zype",
+    imagePublicId="blog/Post-Image",
+    title='A Python Library to Generate Dynamic Share Images',
+    tagline=join_tags(tags),
+    taglineFont="futura"
 )
 ```
+
+## Parameters
+### Required Parameters
+Parameter | Type | Description |
+:--------: | :------: | :---------: |
+`title`    | String     | Title of Text |
+`cloudName` | String   | Name of your Cloudinary Cloud |
+`imagePublicId` | String | Public Id of Your Image including Folder Name |
+### Optional Parameters
+Parameter | Type | Default | Description |
+:--------: | :-------: | :-----: | :-----: |
+`tagline` | String | None |Tagline of Website or Tags of Post |
+`titleFont` | String | futura | Font of Title |
+`titleExtraConfig` | String | `''` | Extra Title Config |
+`taglineExtraConfig` | String | `''` | Extra Config of Tagline |
+`cloudinaryUrlBase` | String | https://res.cloudinary.com | URL Base of Cloudinary |
+`taglineFont` | String | arial | Font of Tagline |
+`imageWidth` | Integer | 1280 | Width of Image |
+`imageHeight` | Integer | 669 | Height of Image |
+`textAreaWidth` | Integer | 760 | Width of TextArea |
+`textLeftOffset` | Integer | 480 | Left Offset of Text |
+`titleGravity` | String | `south_west` | Gravity of Title |
+`taglineGravity` | String | `north_west` | Gravity of Tagline |
+`titleLeftOffset` | Integer | None | Left Offset of Title |
+`taglineLeftOffset` | Integer | None | Left Offset of Tagline |
+`titleBottomOffset` | Integer | 254 | Bottom Offset of Title |
+`taglineTopOffset` | Integer | 445 | Top Offset of Tagline |
+`textColor` | String | `000000` | Color of Text |
+`titleColor` | String | None | Color of Title (If not provided `textColor` will be used instead |
+`taglineColor` | String | None | Color of Tagline (If not provided `textColor` will be used instead |
+`titleFontSize` | Integer | 64 | Font Size of Title |
+`taglineFontSize` | Integer | 48 | Font Size of Tagline |
+**Note**: If you don't provide Tagline, Parameters with `tagline` Prefix will be ignored.  
+We may add more Customization to **ShareImage** in the Future.
