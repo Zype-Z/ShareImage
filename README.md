@@ -114,5 +114,6 @@ Parameter | Type | Default | Description |
 `taglineColor` | String | None | Color of Tagline (If not provided `textColor` will be used instead |
 `titleFontSize` | Integer | 64 | Font Size of Title |
 `taglineFontSize` | Integer | 48 | Font Size of Tagline |
+
 **Note**: If you don't provide Tagline, Parameters with `tagline` Prefix will be ignored.  
 We may add more Customization to **ShareImage** in the Future.
