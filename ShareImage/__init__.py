@@ -10,6 +10,7 @@ def join_tags(tags: list) -> str:
     tagString = f'#{" #".join(tags)}'
     return tagString
 
+
 def clean_text(text: str) -> str:
     """Clean Text of a String and make it URI-Compatible
 
@@ -19,7 +20,14 @@ def clean_text(text: str) -> str:
     Returns:
         str: Cleaned Text
     """
-    return text.replace(',', '%252C').replace('?', '%253F').replace('/', '%252F').replace('\\', '%255C').replace('#', '%2523').replace(' ', '%2520')
+    return (
+        text.replace(",", "%252C")
+        .replace("?", "%253F")
+        .replace("/", "%252F")
+        .replace("\\", "%255C")
+        .replace("#", "%2523")
+        .replace(" ", "%2520")
+    )
 
 
 def ShareImage(
@@ -28,21 +36,21 @@ def ShareImage(
     imagePublicId: str,
     tagline: str = None,
     titleFont: str = "futura",
-    titleExtraConfig: str = '',
-    taglineExtraConfig: str = '',
+    titleExtraConfig: str = "",
+    taglineExtraConfig: str = "",
     cloudinaryUrlBase: str = "https://res.cloudinary.com",
-    taglineFont: str = 'arial',
+    taglineFont: str = "arial",
     imageWidth: int = 1280,
     imageHeight: int = 669,
     textAreaWidth: int = 760,
     textLeftOffset: int = 480,
-    titleGravity: str = 'south_west',
-    taglineGravity: str = 'north_west',
+    titleGravity: str = "south_west",
+    taglineGravity: str = "north_west",
     titleLeftOffset: int = None,
     taglineLeftOffset: int = None,
     titleBottomOffset: int = 254,
     taglineTopOffset: int = 445,
-    textColor: str = '000000',
+    textColor: str = "000000",
     titleColor: str = None,
     taglineColor: str = None,
     titleFontSize: int = 64,
@@ -80,43 +88,37 @@ def ShareImage(
         str: Complete Cloudinary URL
     """
 
-    imageConfig = [
-        f'w_{imageWidth}',
-        f'h_{imageHeight}',
-        'c_fill',
-        'q_auto',
-        'f_auto'
-    ]
+    imageConfig = [f"w_{imageWidth}", f"h_{imageHeight}", "c_fill", "q_auto", "f_auto"]
 
-    imageConfig = ','.join(imageConfig)
+    imageConfig = ",".join(imageConfig)
 
     title = clean_text(title)
 
     titleConfig = [
-        f'w_{textAreaWidth}',
-        'c_fit',
-        f'co_rgb:{titleColor or textColor}',
-        f'g_{titleGravity}',
-        f'x_{titleLeftOffset or textLeftOffset}',
-        f'y_{titleBottomOffset}',
-        f'l_text:{titleFont}_{titleFontSize}{titleExtraConfig}:{title}',
+        f"w_{textAreaWidth}",
+        "c_fit",
+        f"co_rgb:{titleColor or textColor}",
+        f"g_{titleGravity}",
+        f"x_{titleLeftOffset or textLeftOffset}",
+        f"y_{titleBottomOffset}",
+        f"l_text:{titleFont}_{titleFontSize}{titleExtraConfig}:{title}",
     ]
 
-    titleConfig = ','.join(titleConfig)
+    titleConfig = ",".join(titleConfig)
 
     if tagline is not None:
         tagline = clean_text(tagline)
         taglineConfig = [
-            f'w_{textAreaWidth}',
-            'c_fit',
-            f'co_rgb:{taglineColor or textColor}',
-            f'g_{taglineGravity}',
-            f'x_{taglineLeftOffset or textLeftOffset}',
-            f'y_{taglineTopOffset}',
-            f'l_text:{taglineFont}_{taglineFontSize}{taglineExtraConfig}:{clean_text(tagline)}'
+            f"w_{textAreaWidth}",
+            "c_fit",
+            f"co_rgb:{taglineColor or textColor}",
+            f"g_{taglineGravity}",
+            f"x_{taglineLeftOffset or textLeftOffset}",
+            f"y_{taglineTopOffset}",
+            f"l_text:{taglineFont}_{taglineFontSize}{taglineExtraConfig}:{clean_text(tagline)}",
         ]
 
-        taglineConfig = ','.join(taglineConfig)
+        taglineConfig = ",".join(taglineConfig)
     else:
         taglineConfig = None
 
@@ -125,8 +127,8 @@ def ShareImage(
         urlParts = [
             cloudinaryUrlBase,
             cloudName,
-            'image',
-            'upload',
+            "image",
+            "upload",
             imageConfig,
             titleConfig,
             taglineConfig,
@@ -136,11 +138,11 @@ def ShareImage(
         urlParts = [
             cloudinaryUrlBase,
             cloudName,
-            'image',
-            'upload',
+            "image",
+            "upload",
             imageConfig,
             titleConfig,
             imagePublicId,
         ]
 
-    return '/'.join(urlParts)
+    return "/".join(urlParts)
