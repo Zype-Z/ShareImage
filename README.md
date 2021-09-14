@@ -119,4 +119,5 @@ Parameter | Type | Default | Description |
 We may add more Customization to **ShareImage** in the Future.
 
 ## Sponsors
-[![Powered By Vercel](https://res.cloudinary.com/zype/image/upload/ShareImage/powered-by-vercel.png)](https://vercel.com/?utm_source=shimg&utm_campaign=oss)
+[![Powered By Vercel](https://res.cloudinary.com/zype/image/upload/ShareImage/powered-by-vercel)](https://vercel.com/?utm_source=shimg&utm_campaign=oss)  
+[Powered By MacStadium](https://res.cloudinary.com/zype/image/upload/ShareImage/MacStadium)
