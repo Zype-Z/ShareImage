@@ -117,3 +117,6 @@ Parameter | Type | Default | Description |
 
 **Note**: If you don't provide Tagline, Parameters with `tagline` Prefix will be ignored.  
 We may add more Customization to **ShareImage** in the Future.
+
+## Sponsors
+[![Powered By Vercel](https://res.cloudinary.com/zype/image/upload/ShareImage/powered-by-vercel.png)](https://vercel.com/?utm_source=shimg&utm_campaign=oss)
