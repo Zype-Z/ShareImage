@@ -13,7 +13,7 @@ python3 -m pip install ShareImage
 ```
 ### API (Currently in Beta)
 To use the API use all the parameters as you do in Node.js Library:
-https://api.shimg.zype.cf/v1/image?paramName=paramValue (This Domain is in work and might not work until complete, for now use the Domain api.shareimage.zype.cf instead)
+https://shimg.zype.cf/v1/image?paramName=paramValue
 ## Usage
 **ShareImage** Can be easily integrated in any Python Project.  
 For example, in **Flask**:
